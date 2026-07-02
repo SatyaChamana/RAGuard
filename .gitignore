@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local data & runtime state
+qdrant_storage/
+ragas_results.csv
+
+# OS / editor
+.DS_Store
+
+# Web
+web/node_modules/
+web/dist/

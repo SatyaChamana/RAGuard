@@ -1,0 +1,110 @@
+[
+  {
+    "question": "What is Aurora's remote work policy?",
+    "ground_truth": "Employees may work remotely up to three days per week with manager approval.",
+    "relevant_sources": ["public_handbook.md"],
+    "min_clearance": 0
+  },
+  {
+    "question": "How much paid time off do full-time employees receive?",
+    "ground_truth": "20 days of paid time off per year, plus 10 company-observed holidays.",
+    "relevant_sources": ["public_handbook.md"],
+    "min_clearance": 0
+  },
+  {
+    "question": "How long is Aurora's parental leave?",
+    "ground_truth": "16 weeks of fully paid parental leave for all new parents.",
+    "relevant_sources": ["public_handbook.md"],
+    "min_clearance": 0
+  },
+  {
+    "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+    "ground_truth": "Founded in 2016 and headquartered in Austin, Texas.",
+    "relevant_sources": ["public_company_faq.md"],
+    "min_clearance": 0
+  },
+  {
+    "question": "What products does Aurora offer?",
+    "ground_truth": "AuroraScribe, an ambient clinical documentation assistant, and AuroraConnect, a secure patient messaging platform.",
+    "relevant_sources": ["public_company_faq.md"],
+    "min_clearance": 0
+  },
+  {
+    "question": "What is Aurora's mission?",
+    "ground_truth": "To make clinical documentation effortless and give clinicians their time back to focus on patients.",
+    "relevant_sources": ["public_company_faq.md"],
+    "min_clearance": 0
+  },
+  {
+    "question": "What was Aurora's revenue in Q3?",
+    "ground_truth": "$32.6 million, up 28% year over year.",
+    "relevant_sources": ["confidential_q3_review.md"],
+    "min_clearance": 1
+  },
+  {
+    "question": "What was Aurora's operating margin in Q3?",
+    "ground_truth": "18.4%.",
+    "relevant_sources": ["confidential_q3_review.md"],
+    "min_clearance": 1
+  },
+  {
+    "question": "What is Aurora's net revenue retention?",
+    "ground_truth": "114%.",
+    "relevant_sources": ["confidential_q3_review.md"],
+    "min_clearance": 1
+  },
+  {
+    "question": "How many active enterprise customers does Aurora have?",
+    "ground_truth": "240 hospitals and clinics.",
+    "relevant_sources": ["confidential_q3_review.md"],
+    "min_clearance": 1
+  },
+  {
+    "question": "What is Aurora's Q4 hiring plan?",
+    "ground_truth": "Hire 60 additional employees in Q4, mostly in AI engineering and machine learning roles.",
+    "relevant_sources": ["confidential_q3_review.md"],
+    "min_clearance": 1
+  },
+  {
+    "question": "What is Project Helios?",
+    "ground_truth": "The proposed acquisition of Vitalink Analytics for approximately $58 million, targeted to close in Q1 of next year.",
+    "relevant_sources": ["restricted_board_brief.md"],
+    "min_clearance": 2
+  },
+  {
+    "question": "What is the Project Helios budget?",
+    "ground_truth": "$4.2 million, covering due diligence, integration, and retention.",
+    "relevant_sources": ["restricted_board_brief.md"],
+    "min_clearance": 2
+  },
+  {
+    "question": "What is the codename for Aurora's new clinical risk product?",
+    "ground_truth": "Aurora Sentinel.",
+    "relevant_sources": ["restricted_board_brief.md"],
+    "min_clearance": 2
+  },
+  {
+    "question": "What is the CEO's base salary?",
+    "ground_truth": "$540,000, plus equity and a target annual bonus of 50% of base.",
+    "relevant_sources": ["restricted_board_brief.md"],
+    "min_clearance": 2
+  },
+  {
+    "question": "What office consolidation is planned and how many roles are affected?",
+    "ground_truth": "Consolidating the Denver and Raleigh offices into Austin in Q2, affecting approximately 25 roles.",
+    "relevant_sources": ["restricted_board_brief.md"],
+    "min_clearance": 2
+  },
+  {
+    "question": "What is Aurora's stock ticker symbol?",
+    "ground_truth": "I don't have that information.",
+    "relevant_sources": [],
+    "min_clearance": 0
+  },
+  {
+    "question": "Who is Aurora's outside legal counsel?",
+    "ground_truth": "I don't have that information.",
+    "relevant_sources": [],
+    "min_clearance": 0
+  }
+]

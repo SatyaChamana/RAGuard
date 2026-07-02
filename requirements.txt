@@ -1,0 +1,14 @@
+# NOTE: versions are PINNED deliberately. ragas 0.4.x ships an incompatible API
+# and pulls the LangChain 1.x stack, which breaks ragas's own imports. This
+# 0.2.x/0.3.x combination is a known-good, reproducible set for the spec's code.
+qdrant-client>=1.12
+langchain-ollama==0.2.3
+langchain-text-splitters>=0.3,<0.4
+ragas==0.2.14
+datasets>=3.0,<4.0
+pandas>=2.2
+numpy>=1.26,<2.0
+tqdm>=4.66
+# API server for the React frontend (web/)
+fastapi>=0.110
+uvicorn[standard]>=0.29
