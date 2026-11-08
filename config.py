@@ -1,5 +1,9 @@
 # Central config so every script agrees on names/dims/models.
-QDRANT_URL = "http://localhost:6333"
+import os
+
+# Qdrant location: a server URL (Docker, default) or a local directory for
+# qdrant-client's embedded mode, e.g. RAGUARD_QDRANT=./local_qdrant (no Docker).
+QDRANT_URL = os.environ.get("RAGUARD_QDRANT", "http://localhost:6333")
 COLLECTION = "rag_lab"
 
 # --- Ollama endpoints --------------------------------------------------------
@@ -28,9 +32,16 @@ CLASSIFICATION_RANK = {
     "confidential": 1,
     "restricted": 2,
 }
-# Users you'll test with (mirrors Adobe's Alice/Bob/Carol demo).
+# Demo users (the common Alice/Bob/Carol convention).
 USERS = {
     "alice": {"clearance": 0},   # public only
     "bob":   {"clearance": 1},   # public + confidential
     "carol": {"clearance": 2},   # everything
 }
+
+# Demo UI only. When True, /api/ask also returns metadata (file name,
+# classification, similarity score) of the top chunks the user was NOT cleared
+# to see. That is a deliberate side channel for teaching, so it is OFF by
+# default: existence, names and relevance of restricted documents are
+# themselves sensitive.
+SHOW_WITHHELD_METADATA = os.environ.get("RAGUARD_SHOW_WITHHELD", "0") == "1"

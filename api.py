@@ -12,10 +12,10 @@ import time
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from qdrant_client import models
 
 import config as C
 from rag import client, embedder, llm, PROMPT
+from governance import clearance_filter
 
 app = FastAPI(title="RAGuard API", version="1.0")
 
@@ -44,12 +44,7 @@ class AskRequest(BaseModel):
 
 def _search(qvec, clearance, top_k):
     """Vector search with the governance pre-filter baked in (None = no filter)."""
-    qfilter = None
-    if clearance is not None:
-        qfilter = models.Filter(must=[models.FieldCondition(
-            key="classification_rank",
-            range=models.Range(lte=clearance),
-        )])
+    qfilter = None if clearance is None else clearance_filter(clearance)
     t0 = time.perf_counter()
     hits = client.query_points(
         collection_name=C.COLLECTION,
@@ -110,13 +105,16 @@ def ask(req: AskRequest):
     # 2. Authorized search: governance pre-filter at the user's clearance.
     user_hits, retrieval_ms = _search(qvec, req.clearance, C.TOP_K)
 
-    # 3. Probe search (full clearance) to reveal what the filter WITHHELD.
-    full_hits, _ = _search(qvec, MAX_RANK, PROBE_K)
-    user_ids = {h.id for h in user_hits}
-    withheld = [
-        h for h in full_hits
-        if h.id not in user_ids and h.payload["classification_rank"] > req.clearance
-    ]
+    # 3. Optional teaching probe: what did the filter WITHHOLD? Off by default,
+    #    because names, classes and scores of restricted chunks are a side channel.
+    withheld = []
+    if C.SHOW_WITHHELD_METADATA:
+        full_hits, _ = _search(qvec, MAX_RANK, PROBE_K)
+        user_ids = {h.id for h in user_hits}
+        withheld = [
+            h for h in full_hits
+            if h.id not in user_ids and h.payload["classification_rank"] > req.clearance
+        ]
 
     # 4. Generate the answer from ONLY the permitted context.
     contexts = [h.payload["text"] for h in user_hits]
@@ -143,8 +141,9 @@ def ask(req: AskRequest):
         "withheld": [_chunk(h, include_text=False) for h in withheld],
         "governance": {
             "accessible": [k for k, v in C.CLASSIFICATION_RANK.items() if v <= req.clearance],
+            "withheld_shown": C.SHOW_WITHHELD_METADATA,
             "withheld_classes": sorted({h.payload["classification"] for h in withheld}),
-            "withheld_count": len(withheld),
+            "withheld_count": len(withheld) if C.SHOW_WITHHELD_METADATA else None,
             "leak": len(leaks) > 0,
             "leak_count": len(leaks),
         },

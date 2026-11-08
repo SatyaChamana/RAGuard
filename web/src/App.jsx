@@ -62,8 +62,10 @@ function GovernancePanel({ trace }) {
       <div className="gov-row">
         <span className="gov-label">Withheld</span>
         <span className="gov-val">
-          {g.withheld_count === 0
-            ? <span className="muted">nothing — full access</span>
+          {!g.withheld_shown
+            ? <span className="muted">hidden (set RAGUARD_SHOW_WITHHELD=1 for the teaching view)</span>
+            : g.withheld_count === 0
+            ? <span className="muted">nothing (full access)</span>
             : <>{g.withheld_classes.map((c) => <ClassBadge key={c} name={c} />)}<span className="muted"> ({g.withheld_count} chunks)</span></>}
         </span>
       </div>

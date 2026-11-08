@@ -1,11 +1,12 @@
 import csv, uuid, pathlib
-from qdrant_client import QdrantClient, models
+from qdrant_client import models
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
 from tqdm import tqdm
 import config as C
+from governance import classify, make_client
 
-client = QdrantClient(url=C.QDRANT_URL)
+client = make_client()
 embedder = OllamaEmbeddings(model=C.EMBED_MODEL, base_url=C.EMBED_BASE_URL)
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=C.CHUNK_SIZE, chunk_overlap=C.CHUNK_OVERLAP
@@ -36,11 +37,9 @@ def main():
     for path in tqdm(sorted(pathlib.Path("documents").glob("*")), desc="documents"):
         if path.suffix not in (".md", ".txt"):
             continue
-        classification = manifest.get(path.name, "restricted")  # fail-closed default
-        if classification not in C.CLASSIFICATION_RANK:
-            # Unknown label in the manifest: fail closed, don't crash or fail open.
-            print(f"⚠️  {path.name}: unknown classification {classification!r} — treating as restricted")
-            classification = "restricted"
+        classification = classify(path.name, manifest)  # fail-closed
+        if manifest.get(path.name) != classification:
+            print(f"⚠️  {path.name}: missing or unknown label {manifest.get(path.name)!r}, treated as {classification}")
         rank = C.CLASSIFICATION_RANK[classification]
         n_docs += 1
         chunks = splitter.split_text(path.read_text(encoding="utf-8"))

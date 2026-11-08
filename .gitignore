@@ -13,3 +13,10 @@ ragas_results.csv
 # Web
 web/node_modules/
 web/dist/
+
+# Local notes and embedded Qdrant data (not part of the project)
+CLAUDE.md
+HPC-ARCHITECTURE.md
+OLLAMA-HPC-RUNBOOK.md
+local_qdrant/
+.pytest_cache/

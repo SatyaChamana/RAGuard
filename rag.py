@@ -1,9 +1,9 @@
 import time
-from qdrant_client import QdrantClient, models
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 import config as C
+from governance import clearance_filter, make_client
 
-client = QdrantClient(url=C.QDRANT_URL)
+client = make_client()
 embedder = OllamaEmbeddings(model=C.EMBED_MODEL, base_url=C.EMBED_BASE_URL)
 llm = ChatOllama(model=C.GEN_MODEL, temperature=0, base_url=C.GEN_BASE_URL)
 
@@ -16,12 +16,7 @@ def authorized_search(query: str, user_clearance: int, top_k: int = C.TOP_K):
         collection_name=C.COLLECTION,
         query=qvec,
         limit=top_k,
-        query_filter=models.Filter(
-            must=[models.FieldCondition(
-                key="classification_rank",
-                range=models.Range(lte=user_clearance),  # doc_rank <= user_clearance
-            )]
-        ),
+        query_filter=clearance_filter(user_clearance),  # doc_rank <= user_clearance
         with_payload=True,
     ).points
     latency_ms = (time.perf_counter() - t0) * 1000

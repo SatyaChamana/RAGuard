@@ -1,23 +1,27 @@
 # 🛡️ RAGuard — RAG Evaluation & Governance Lab
 
-**A RAG system that provably cannot leak documents to users who aren't cleared to see them — with the evaluation harness to prove it.**
+**A RAG system that enforces document access control inside the vector query, with an evaluation harness that measures both answer quality and leakage.**
 
 Most RAG tutorials stop at "retrieve, stuff, generate." RAGuard answers the two questions production actually asks:
 
 1. **Is this RAG system retrieving and generating well?** — measured with classic IR metrics *and* LLM-judged RAGAS metrics, not vibes.
-2. **Can it leak a document a user isn't authorized to read?** — enforced structurally, tested exhaustively, leak rate must be exactly **0**.
+2. **Can it leak a document a user isn't authorized to read?** Access is enforced in the query itself, and a leak test sweeps every question for every user; the leak count must be exactly **0**.
 
-## Verified results
+## Results
 
-| Category | Metric | Result |
-|---|---|---|
-| Governance | **Leak rate** (18 questions × 3 clearance levels, 270 chunk checks) | **0 leaks** |
-| Retrieval | Recall@5 / Hit Rate@5 | 1.000 / 1.000 |
-| Retrieval | MRR / Precision@5 | 0.938 / 0.391 |
-| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms |
-| Generation (RAGAS) | Faithfulness | 0.870 |
-| Generation (RAGAS) | Context Precision / Context Recall | 0.796 / 1.000 |
-| Generation (RAGAS) | Answer Relevancy | 0.665 † |
+Small synthetic corpus: 4 documents of a fictional company (public, confidential, restricted), 18 golden questions including 2 deliberately unanswerable ones, 3 users.
+
+| Category | Metric | Run 1 (2026-07-02, Qdrant server) | Run 2 (2026-11-08, embedded Qdrant, after refactor) |
+|---|---|---|---|
+| Governance | **Leaks** (18 questions × 3 users × top 5 = 270 chunk checks) | **0** | **0** (and 0 access mismatches) |
+| Retrieval | Recall@5 / Hit Rate@5 | 1.000 / 1.000 | 1.000 / 1.000 |
+| Retrieval | MRR / Precision@5 | 0.938 / 0.391 | 0.906 / 0.323 |
+| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | not comparable (in-process exact search) |
+| Generation (RAGAS) | Faithfulness | 0.870 | not rerun |
+| Generation (RAGAS) | Context Precision / Context Recall | 0.796 / 1.000 | not rerun |
+| Generation (RAGAS) | Answer Relevancy | 0.665 † | not rerun |
+
+The governance result reproduced exactly. Precision and MRR moved between runs; the cause (index mode, library versions, or chunking) has not been isolated. Precision@5 is low by construction here, because 5 chunks are returned from a 4-document corpus.
 
 † A known artifact of terse-but-correct answers, confirmed stable across three different judge models (see [Judge A/B](#the-llm-judge-ab-experiment)).
 
@@ -47,7 +51,7 @@ classification_rank <= user_clearance      # enforced as a Qdrant payload filter
                          └──────────────────────────────────────────┘
 ```
 
-Because unauthorized documents never enter the candidate set, leakage is **structurally impossible** rather than dependent on the model behaving. Two invariants follow:
+Because unauthorized documents never enter the candidate set, the model cannot quote what it never receives, so protection does not depend on the model behaving. The guarantee is only as strong as the classification labels and the filter itself, which is why both are tested. Two invariants follow:
 
 1. **Pre-filter, never post-filter.** Filtering happens via `query_filter` against an indexed integer payload field. Retrieve-broadly-then-drop hurts recall and leaks the moment the filter is skipped.
 2. **Fail-closed.** A document missing from the manifest — or carrying an unrecognized label — defaults to the *most* restricted class, never the least.
@@ -58,13 +62,16 @@ Clearance model: `public=0 · confidential=1 · restricted=2`; a user's clearanc
 
 | File | Role |
 |---|---|
-| `config.py` | Single source of truth: models, dims, chunking, top-k, clearance ranks, users |
+| `config.py` | Single source of truth: models, dims, chunking, top-k, clearance ranks, users, Qdrant location |
+| `governance.py` | Fail-closed classification, clearance validation and the payload pre-filter, with no model dependencies |
 | `ingest.py` | Chunk → embed → upsert with governance payload (fail-closed classification) |
 | `rag.py` | Authorized retrieval + grounded generation; refuses when no permitted context exists |
 | `evaluate_retrieval.py` | Precision@k, Recall@k, MRR, Hit Rate, latency percentiles (model-independent) |
 | `evaluate_ragas.py` | RAGAS faithfulness / relevancy / context precision + recall (LLM-as-judge) |
-| `test_governance.py` | The leak test: sweeps every question × every user; any leak is a failure |
+| `test_governance.py` | End-to-end leak test: sweeps every question × every user; exits non-zero on any leak or access mismatch |
+| `tests/test_offline.py` | Unit tests that need no Ollama or Qdrant server: fail-closed labels, clearance validation, and a randomized check that the filter never returns a chunk above the user's clearance |
 | `api.py` + `web/` | FastAPI + React observability UI: per-stage timings, retrieved vs. **withheld** chunks, live leak status |
+| `docs/build-guide.md` | The original step-by-step build guide the project started from |
 | `documents/`, `manifest.csv`, `golden_set.json` | Synthetic corpus (fictional company), classification ground truth, eval ground truth — including deliberately unanswerable questions to catch hallucination |
 
 ## Stack
@@ -76,7 +83,7 @@ Models: `nomic-embed-text` (768-d embeddings) · `llama3.1:8b` (generation) · `
 ## Quick start
 
 ```bash
-# 1. Vector DB
+# 1. Vector DB (or skip Docker: export RAGUARD_QDRANT=./local_qdrant for embedded mode)
 docker run -d --name qdrant-lab -p 6333:6333 -p 6334:6334 \
   -v "$(pwd)/qdrant_storage:/qdrant/storage" qdrant/qdrant
 
@@ -92,13 +99,18 @@ python ingest.py                 # chunk → embed → index with governance pay
 python rag.py                    # smoke test
 python evaluate_retrieval.py     # IR metrics + latency
 python evaluate_ragas.py         # LLM-judged quality (slow)
-python test_governance.py        # leak test — must print 0
+python test_governance.py        # leak test: must print 0 and exit 0
+python -m pytest -q              # offline governance tests
 
 # 5. Observability UI (optional)
 ./run_app.sh                     # FastAPI :8090 + Vite dev server
 ```
 
 The decisive demo: ask *"What is the Project Helios budget?"* (a restricted fact) as alice (clearance 0). The system retrieves nothing restricted and answers "I don't have that information" — then flip to carol (clearance 2) in the UI and watch the same question answered with sources, with the sidebar showing exactly which chunks the gate withheld.
+
+## Known side channel: the "withheld" view
+
+The demo UI can show which chunks the filter withheld from a user. Even without their text, that view reveals that a restricted document exists, its file name, its class and how relevant it is to the question, and an unauthorized user can learn a lot from that. It is therefore **off by default**: the API returns no withheld metadata unless `RAGUARD_SHOW_WITHHELD=1` is set for teaching. The leak test covers retrieved content, not metadata channels like this one, and it checks one top-k retrieval path, not every possible inference from scores, timing or refusals.
 
 ## The LLM-judge A/B experiment
 

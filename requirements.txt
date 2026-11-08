@@ -12,3 +12,4 @@ tqdm>=4.66
 # API server for the React frontend (web/)
 fastapi>=0.110
 uvicorn[standard]>=0.29
+pytest>=8
