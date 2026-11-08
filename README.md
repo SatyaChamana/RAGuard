@@ -11,17 +11,17 @@ Most RAG tutorials stop at "retrieve, stuff, generate." RAGuard answers the two 
 
 Small synthetic corpus: 4 documents of a fictional company (public, confidential, restricted), 18 golden questions including 2 deliberately unanswerable ones, 3 users.
 
-| Category | Metric | Run 1 (2026-07-02, Qdrant server) | Run 2 (2026-11-08, embedded Qdrant, after refactor) |
+| Category | Metric | Run 1 (2026-07-02, Qdrant server) | Run 2 (2026-11-08, after refactor; Qdrant server and embedded mode agree) |
 |---|---|---|---|
 | Governance | **Leaks** (18 questions × 3 users × top 5 = 270 chunk checks) | **0** | **0** (and 0 access mismatches) |
 | Retrieval | Recall@5 / Hit Rate@5 | 1.000 / 1.000 | 1.000 / 1.000 |
 | Retrieval | MRR / Precision@5 | 0.938 / 0.391 | 0.906 / 0.323 |
-| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | not comparable (in-process exact search) |
+| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | 6.3 ms / 7.7 ms (server) |
 | Generation (RAGAS) | Faithfulness | 0.870 | not rerun |
 | Generation (RAGAS) | Context Precision / Context Recall | 0.796 / 1.000 | not rerun |
 | Generation (RAGAS) | Answer Relevancy | 0.665 † | not rerun |
 
-The governance result reproduced exactly. Precision and MRR moved between runs; the cause (index mode, library versions, or chunking) has not been isolated. Precision@5 is low by construction here, because 5 chunks are returned from a 4-document corpus.
+The governance result reproduced exactly. Precision and MRR moved between runs. Run 2 gives identical numbers on the Qdrant server and in embedded mode, so the index mode is not the cause; the July figures came from an earlier state of the code or library versions that was not recorded. Precision@5 is low by construction here, because 5 chunks are returned from a 4-document corpus.
 
 † A known artifact of terse-but-correct answers, confirmed stable across three different judge models (see [Judge A/B](#the-llm-judge-ab-experiment)).
 
