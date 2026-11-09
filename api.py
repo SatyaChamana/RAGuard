@@ -6,7 +6,7 @@ visualise: the answer, the retrieved chunks (with scores + classifications),
 what was *withheld* by the user's clearance, the leak status, and per-stage
 timings.
 
-Run:  uvicorn api:app --reload --port 8000   (from the project root, venv active)
+Run:  uvicorn api:app --reload --port 8090   (from the project root, venv active)
 """
 import time
 from fastapi import FastAPI
@@ -43,8 +43,8 @@ class AskRequest(BaseModel):
 
 
 def _search(qvec, clearance, top_k):
-    """Vector search with the governance pre-filter baked in (None = no filter)."""
-    qfilter = None if clearance is None else clearance_filter(clearance)
+    """Vector search with the governance pre-filter always applied (no unfiltered path)."""
+    qfilter = clearance_filter(clearance)
     t0 = time.perf_counter()
     hits = client.query_points(
         collection_name=C.COLLECTION,

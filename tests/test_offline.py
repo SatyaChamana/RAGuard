@@ -50,5 +50,11 @@ def test_filter_never_returns_chunks_above_clearance():
             assert all(h.payload["classification_rank"] <= clearance for h in hits)
 
 
-def test_withheld_metadata_off_by_default():
-    assert C.SHOW_WITHHELD_METADATA is False
+def test_withheld_metadata_off_by_default(monkeypatch):
+    """Default must be off when the teaching flag is unset, whatever the caller's shell has."""
+    import importlib
+    monkeypatch.delenv("RAGUARD_SHOW_WITHHELD", raising=False)
+    try:
+        assert importlib.reload(C).SHOW_WITHHELD_METADATA is False
+    finally:
+        importlib.reload(C)

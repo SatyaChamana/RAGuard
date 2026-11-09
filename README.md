@@ -5,7 +5,7 @@
 Most RAG tutorials stop at "retrieve, stuff, generate." RAGuard answers the two questions production actually asks:
 
 1. **Is this RAG system retrieving and generating well?** — measured with classic IR metrics *and* LLM-judged RAGAS metrics, not vibes.
-2. **Can it leak a document a user isn't authorized to read?** Access is enforced in the query itself, and a leak test sweeps every question for every user; the leak count must be exactly **0**.
+2. **Can it leak a document a user isn't authorized to read?** Access is enforced in the query itself, and a leak test sweeps every question for every user; the leak count must be exactly **0**. Scope: the demo trusts the clearance the client sends (authentication is out of scope), and the tests cover retrieved content on the top-k path, not inference from refusals, timing or scores.
 
 ## Results
 
@@ -13,17 +13,32 @@ Small synthetic corpus: 4 documents of a fictional company (public, confidential
 
 | Category | Metric | Run 1 (2026-07-02, Qdrant server) | Run 2 (2026-11-08, after refactor; Qdrant server and embedded mode agree) |
 |---|---|---|---|
-| Governance | **Leaks** (18 questions × 3 users × top 5 = 270 chunk checks) | **0** | **0** (and 0 access mismatches) |
-| Retrieval | Recall@5 / Hit Rate@5 | 1.000 / 1.000 | 1.000 / 1.000 |
-| Retrieval | MRR / Precision@5 | 0.938 / 0.391 | 0.906 / 0.323 |
-| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | 6.3 ms / 7.7 ms (server) |
-| Generation (RAGAS) | Faithfulness | 0.870 | not rerun |
+| Governance | **Leaks** (18 questions × 3 users × top 5 = 270 chunk checks; 180 of them by the two restricted users, since carol cannot leak by definition) | **0** | **0**, 0 stored labels disagreeing with `manifest.csv`, 0 of 33 cleared lookups failed |
+| Retrieval (16 answerable questions) | Recall@5 / Hit Rate@5 | 1.000 / 1.000 | 1.000 / 1.000 |
+| Retrieval | MRR / Doc precision@5 | 0.938 / 0.391 | 0.906 / 0.323 |
+| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | 6.4 ms / 9.5 ms (server) |
+| Generation (RAGAS) | Faithfulness (all 18 / 16 answerable) | 0.870 / 0.979 ‡ | not rerun |
 | Generation (RAGAS) | Context Precision / Context Recall | 0.796 / 1.000 | not rerun |
 | Generation (RAGAS) | Answer Relevancy | 0.665 † | not rerun |
 
-The governance result reproduced exactly. Precision and MRR moved between runs. Run 2 gives identical numbers on the Qdrant server and in embedded mode, so the index mode is not the cause; the July figures came from an earlier state of the code or library versions that was not recorded. Precision@5 is low by construction here, because 5 chunks are returned from a 4-document corpus.
+Run 2 records: `results/leak_sweep_*.json` and `results/retrieval_*.json` (per-check and per-question rows, commit, Qdrant location, models).
+
+The governance result reproduced exactly. MRR moved by one question dropping from rank 1 to rank 2. Corpus, golden set, chunking and the filter condition did not change between runs (the refactor in `rag.py` and `ingest.py` moved the same filter and labels into `governance.py`; see `git diff f560307 dc6e9cf`), and run 2 gives identical numbers on the Qdrant server and in embedded mode, so the shift came from the environment (library versions, model weights or hardware), which run 1 did not record. Scale caveat: the index has 12 chunks, so random top-5 retrieval would already score hit rate 0.84 and MRR 0.48; MRR is the informative number. Doc precision@5 counts unique documents in the top 5 and is low by construction with one relevant document per question.
+
+‡ The two unanswerable questions were both refused ("I don't have that information"); the Qwen2.5-32B judge scores a correct refusal as faithfulness 0, the Llama-3.1-70B judge as 1. On the 16 answerable questions the two judges agree closely (0.979 vs 0.958).
 
 † A known artifact of terse-but-correct answers, confirmed stable across three different judge models (see [Judge A/B](#the-llm-judge-ab-experiment)).
+
+### Environment of the 2026-11-08 runs
+
+| Component | Version |
+|---|---|
+| Python packages | `requirements.lock` (qdrant-client 1.18.0, ragas 0.2.14, langchain-ollama 0.2.3, fastapi 0.138.0) |
+| Qdrant server | 1.18.2 (image digest `sha256:75eab8c4ba42`) |
+| Ollama | 0.14.1, `nomic-embed-text` digest `0a109f422b47` (local Mac) |
+| Python | 3.10.8 |
+
+Run 1 (July) used models served from GVSU's H100 cluster over an SSH tunnel; its library and model versions were not recorded. The RAGAS rows come from run 1 only.
 
 ## The core idea: relevant ≠ permitted
 
@@ -66,10 +81,11 @@ Clearance model: `public=0 · confidential=1 · restricted=2`; a user's clearanc
 | `governance.py` | Fail-closed classification, clearance validation and the payload pre-filter, with no model dependencies |
 | `ingest.py` | Chunk → embed → upsert with governance payload (fail-closed classification) |
 | `rag.py` | Authorized retrieval + grounded generation; refuses when no permitted context exists |
-| `evaluate_retrieval.py` | Precision@k, Recall@k, MRR, Hit Rate, latency percentiles (model-independent) |
+| `evaluate_retrieval.py` | Doc precision@k, Recall@k, MRR, Hit Rate, latency percentiles; writes a run record to `results/` |
 | `evaluate_ragas.py` | RAGAS faithfulness / relevancy / context precision + recall (LLM-as-judge) |
-| `test_governance.py` | End-to-end leak test: sweeps every question × every user; exits non-zero on any leak or access mismatch |
-| `tests/test_offline.py` | Unit tests that need no Ollama or Qdrant server: fail-closed labels, clearance validation, and a randomized check that the filter never returns a chunk above the user's clearance |
+| `test_governance.py` | Live leak sweep: every question × every user. Expected levels come from `manifest.csv`, not the stored payload, so a mislabeled chunk is caught. Writes a run record to `results/`; exits non-zero on any leak, label disagreement or access mismatch |
+| `tests/test_offline.py` | Unit tests that need no Ollama or Qdrant server: fail-closed labels, clearance validation, and a randomized check of the filter on qdrant-client's embedded engine |
+| `tests/test_api.py` | API tests with fakes: every search is filtered, no unfiltered probe and no withheld metadata when the teaching flag is off, out-of-range clearances rejected |
 | `api.py` + `web/` | FastAPI + React observability UI: per-stage timings, retrieved vs. **withheld** chunks, live leak status |
 | `docs/build-guide.md` | The original step-by-step build guide the project started from |
 | `documents/`, `manifest.csv`, `golden_set.json` | Synthetic corpus (fictional company), classification ground truth, eval ground truth — including deliberately unanswerable questions to catch hallucination |
@@ -85,14 +101,14 @@ Models: `nomic-embed-text` (768-d embeddings) · `llama3.1:8b` (generation) · `
 ```bash
 # 1. Vector DB (or skip Docker: export RAGUARD_QDRANT=./local_qdrant for embedded mode)
 docker run -d --name qdrant-lab -p 6333:6333 -p 6334:6334 \
-  -v "$(pwd)/qdrant_storage:/qdrant/storage" qdrant/qdrant
+  -v "$(pwd)/qdrant_storage:/qdrant/storage" qdrant/qdrant:v1.18.2
 
 # 2. Models (any Ollama endpoint; set the URL in config.py)
 ollama pull nomic-embed-text && ollama pull llama3.1:8b && ollama pull qwen2.5:32b
 
-# 3. Python env (3.10; requirements are version-pinned deliberately)
+# 3. Python env (3.10). requirements.lock = exact versions of the 2026-11-08 runs
 python3.10 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.lock
 
 # 4. The pipeline, in order
 python ingest.py                 # chunk → embed → index with governance payload
@@ -100,7 +116,7 @@ python rag.py                    # smoke test
 python evaluate_retrieval.py     # IR metrics + latency
 python evaluate_ragas.py         # LLM-judged quality (slow)
 python test_governance.py        # leak test: must print 0 and exit 0
-python -m pytest -q              # offline governance tests
+python -m pytest -q              # offline governance + API tests (no models needed)
 
 # 5. Observability UI (optional)
 ./run_app.sh                     # FastAPI :8090 + Vite dev server

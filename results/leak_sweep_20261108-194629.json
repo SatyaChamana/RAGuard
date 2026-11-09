@@ -1,0 +1,2734 @@
+{
+ "commit": "dc6e9cf",
+ "qdrant": "http://localhost:6333",
+ "embed_model": "nomic-embed-text",
+ "top_k": 5,
+ "checks": 270,
+ "leaks": 0,
+ "label_mismatches": 0,
+ "access_mismatches": 0,
+ "cleared_pairs": 33,
+ "uncleared_pairs": 15,
+ "chunk_checks": [
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's remote work policy?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's remote work policy?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's remote work policy?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How much paid time off do full-time employees receive?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How long is Aurora's parental leave?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How long is Aurora's parental leave?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How long is Aurora's parental leave?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How long is Aurora's parental leave?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What products does Aurora offer?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What products does Aurora offer?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What products does Aurora offer?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What products does Aurora offer?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What products does Aurora offer?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What products does Aurora offer?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What products does Aurora offer?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's mission?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's mission?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's mission?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's mission?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's mission?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's mission?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's mission?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's revenue in Q3?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What was Aurora's operating margin in Q3?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's net revenue retention?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "How many active enterprise customers does Aurora have?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's Q4 hiring plan?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Project Helios?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Project Helios?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Project Helios?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Project Helios?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Project Helios?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Project Helios?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Project Helios?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the Project Helios budget?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the Project Helios budget?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the Project Helios budget?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the Project Helios budget?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the Project Helios budget?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the Project Helios budget?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the Project Helios budget?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the Project Helios budget?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the Project Helios budget?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the Project Helios budget?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the Project Helios budget?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the Project Helios budget?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the Project Helios budget?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the Project Helios budget?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the Project Helios budget?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the CEO's base salary?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is the CEO's base salary?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the CEO's base salary?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the CEO's base salary?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the CEO's base salary?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the CEO's base salary?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the CEO's base salary?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is the CEO's base salary?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "confidential_q3_review.md",
+   "stored_rank": 1,
+   "manifest_rank": 1,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "What is Aurora's stock ticker symbol?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "alice",
+   "clearance": 0,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "bob",
+   "clearance": 1,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_company_faq.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "restricted_board_brief.md",
+   "stored_rank": 2,
+   "manifest_rank": 2,
+   "leak": false
+  },
+  {
+   "user": "carol",
+   "clearance": 2,
+   "question": "Who is Aurora's outside legal counsel?",
+   "source": "public_handbook.md",
+   "stored_rank": 0,
+   "manifest_rank": 0,
+   "leak": false
+  }
+ ],
+ "access_checks": [
+  {
+   "user": "alice",
+   "question": "What is Aurora's remote work policy?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "bob",
+   "question": "What is Aurora's remote work policy?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What is Aurora's remote work policy?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "How much paid time off do full-time employees receive?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "bob",
+   "question": "How much paid time off do full-time employees receive?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "How much paid time off do full-time employees receive?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "How long is Aurora's parental leave?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "bob",
+   "question": "How long is Aurora's parental leave?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "How long is Aurora's parental leave?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "bob",
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What products does Aurora offer?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "bob",
+   "question": "What products does Aurora offer?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What products does Aurora offer?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is Aurora's mission?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "bob",
+   "question": "What is Aurora's mission?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What is Aurora's mission?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What was Aurora's revenue in Q3?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What was Aurora's revenue in Q3?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What was Aurora's revenue in Q3?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What was Aurora's operating margin in Q3?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What was Aurora's operating margin in Q3?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What was Aurora's operating margin in Q3?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is Aurora's net revenue retention?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What is Aurora's net revenue retention?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What is Aurora's net revenue retention?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "How many active enterprise customers does Aurora have?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "How many active enterprise customers does Aurora have?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "How many active enterprise customers does Aurora have?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is Aurora's Q4 hiring plan?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What is Aurora's Q4 hiring plan?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "carol",
+   "question": "What is Aurora's Q4 hiring plan?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is Project Helios?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What is Project Helios?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "carol",
+   "question": "What is Project Helios?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is the Project Helios budget?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What is the Project Helios budget?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "carol",
+   "question": "What is the Project Helios budget?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "carol",
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What is the CEO's base salary?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What is the CEO's base salary?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "carol",
+   "question": "What is the CEO's base salary?",
+   "should_access": true,
+   "got": true
+  },
+  {
+   "user": "alice",
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "bob",
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "should_access": false,
+   "got": false
+  },
+  {
+   "user": "carol",
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "should_access": true,
+   "got": true
+  }
+ ]
+}

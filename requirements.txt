@@ -1,4 +1,5 @@
-# NOTE: versions are PINNED deliberately. ragas 0.4.x ships an incompatible API
+# Compatible ranges. Exact versions of the 2026-11-08 runs: requirements.lock.
+# ragas 0.4.x ships an incompatible API
 # and pulls the LangChain 1.x stack, which breaks ragas's own imports. This
 # 0.2.x/0.3.x combination is a known-good, reproducible set for the spec's code.
 qdrant-client>=1.12

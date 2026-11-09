@@ -1,0 +1,162 @@
+{
+ "commit": "dc6e9cf",
+ "qdrant": "http://localhost:6333",
+ "embed_model": "nomic-embed-text",
+ "top_k": 5,
+ "n_questions": 16,
+ "doc_precision": 0.32291666666666663,
+ "recall": 1.0,
+ "hit_rate": 1.0,
+ "mrr": 0.90625,
+ "latency_p50_ms": 6.4244169916491956,
+ "latency_p95_ms": 9.499770982074551,
+ "per_question": [
+  {
+   "question": "What is Aurora's remote work policy?",
+   "retrieved_docs": [
+    "public_handbook.md",
+    "public_company_faq.md",
+    "confidential_q3_review.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "How much paid time off do full-time employees receive?",
+   "retrieved_docs": [
+    "public_handbook.md",
+    "confidential_q3_review.md",
+    "restricted_board_brief.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "How long is Aurora's parental leave?",
+   "retrieved_docs": [
+    "public_handbook.md",
+    "confidential_q3_review.md",
+    "public_company_faq.md",
+    "restricted_board_brief.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "When was Aurora Health Technologies founded and where is it headquartered?",
+   "retrieved_docs": [
+    "public_company_faq.md",
+    "restricted_board_brief.md",
+    "confidential_q3_review.md",
+    "public_handbook.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What products does Aurora offer?",
+   "retrieved_docs": [
+    "public_company_faq.md",
+    "public_handbook.md",
+    "restricted_board_brief.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What is Aurora's mission?",
+   "retrieved_docs": [
+    "public_company_faq.md",
+    "restricted_board_brief.md",
+    "public_handbook.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What was Aurora's revenue in Q3?",
+   "retrieved_docs": [
+    "confidential_q3_review.md",
+    "public_company_faq.md",
+    "restricted_board_brief.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What was Aurora's operating margin in Q3?",
+   "retrieved_docs": [
+    "confidential_q3_review.md",
+    "restricted_board_brief.md",
+    "public_company_faq.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What is Aurora's net revenue retention?",
+   "retrieved_docs": [
+    "confidential_q3_review.md",
+    "public_company_faq.md",
+    "restricted_board_brief.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "How many active enterprise customers does Aurora have?",
+   "retrieved_docs": [
+    "public_company_faq.md",
+    "confidential_q3_review.md"
+   ],
+   "first_relevant_rank": 2
+  },
+  {
+   "question": "What is Aurora's Q4 hiring plan?",
+   "retrieved_docs": [
+    "confidential_q3_review.md",
+    "restricted_board_brief.md",
+    "public_company_faq.md",
+    "public_handbook.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What is Project Helios?",
+   "retrieved_docs": [
+    "public_company_faq.md",
+    "restricted_board_brief.md",
+    "public_handbook.md"
+   ],
+   "first_relevant_rank": 2
+  },
+  {
+   "question": "What is the Project Helios budget?",
+   "retrieved_docs": [
+    "restricted_board_brief.md",
+    "confidential_q3_review.md",
+    "public_company_faq.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What is the codename for Aurora's new clinical risk product?",
+   "retrieved_docs": [
+    "public_company_faq.md",
+    "restricted_board_brief.md",
+    "confidential_q3_review.md"
+   ],
+   "first_relevant_rank": 2
+  },
+  {
+   "question": "What is the CEO's base salary?",
+   "retrieved_docs": [
+    "restricted_board_brief.md",
+    "confidential_q3_review.md",
+    "public_handbook.md",
+    "public_company_faq.md"
+   ],
+   "first_relevant_rank": 1
+  },
+  {
+   "question": "What office consolidation is planned and how many roles are affected?",
+   "retrieved_docs": [
+    "restricted_board_brief.md",
+    "confidential_q3_review.md",
+    "public_company_faq.md"
+   ],
+   "first_relevant_rank": 1
+  }
+ ]
+}
