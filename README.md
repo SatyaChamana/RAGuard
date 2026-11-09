@@ -16,7 +16,7 @@ Small synthetic corpus: 4 documents of a fictional company (public, confidential
 | Governance | **Leaks** (18 questions × 3 users × top 5 = 270 chunk checks; 180 of them by the two restricted users, since carol cannot leak by definition) | **0** | **0**, 0 stored labels disagreeing with `manifest.csv`, 0 of 33 cleared lookups failed |
 | Retrieval (16 answerable questions) | Recall@5 / Hit Rate@5 | 1.000 / 1.000 | 1.000 / 1.000 |
 | Retrieval | MRR / Doc precision@5 | 0.938 / 0.391 | 0.906 / 0.323 |
-| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | 6.4 ms / 9.5 ms (server) |
+| Latency | Retrieval p50 / p95 | 11.2 ms / 14.5 ms | 7.4 ms / 9.2 ms (server) |
 | Generation (RAGAS) | Faithfulness (all 18 / 16 answerable) | 0.870 / 0.979 ‡ | not rerun |
 | Generation (RAGAS) | Context Precision / Context Recall | 0.796 / 1.000 | not rerun |
 | Generation (RAGAS) | Answer Relevancy | 0.665 † | not rerun |
