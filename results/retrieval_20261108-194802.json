@@ -1,5 +1,5 @@
 {
- "commit": "dc6e9cf",
+ "commit": "4f1ce8b",
  "qdrant": "http://localhost:6333",
  "embed_model": "nomic-embed-text",
  "top_k": 5,
@@ -8,8 +8,8 @@
  "recall": 1.0,
  "hit_rate": 1.0,
  "mrr": 0.90625,
- "latency_p50_ms": 6.4244169916491956,
- "latency_p95_ms": 9.499770982074551,
+ "latency_p50_ms": 7.365291501628235,
+ "latency_p95_ms": 9.199427237035707,
  "per_question": [
   {
    "question": "What is Aurora's remote work policy?",

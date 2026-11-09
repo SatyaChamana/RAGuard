@@ -1,5 +1,5 @@
 {
- "commit": "dc6e9cf",
+ "commit": "4f1ce8b",
  "qdrant": "http://localhost:6333",
  "embed_model": "nomic-embed-text",
  "top_k": 5,
